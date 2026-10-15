@@ -28,12 +28,23 @@ First-run warnings (the app is not signed with a paid certificate):
 
 ## Run it in Google Colab (no install, works in the browser)
 
-Open this link, then run the cells top to bottom:
+Open this link and click **Runtime > Run all**:
 https://colab.research.google.com/github/obaidkhan009/tcs-tracking-bot/blob/main/TCS_Tracker_Colab.ipynb
 
-Cell 2 lets you upload the .xlsx from your computer, or use a file saved in
-Google Drive (updated in place). Cell 5 downloads the updated file when you
-chose upload. The notebook does the same thing as the app; nothing to install.
+It asks for Google Drive access, lists every Excel file in your Drive in a
+dropdown, and shows a search box. Type a tracking number, press Enter, read the
+status. The sheet in Drive is updated in place after every check, so you never
+re-upload or download anything. Buttons: *Refresh all rows*, *Upload from
+computer* (for a file not in Drive) and *Download updated file* (for uploads).
+
+Have a blank Colab notebook already? Paste this into a cell and run it:
+
+```
+!git clone -q https://github.com/obaidkhan009/tcs-tracking-bot.git /content/tcs-tracking-bot 2>/dev/null || git -C /content/tcs-tracking-bot pull -q
+!pip install -q -r /content/tcs-tracking-bot/requirements.txt
+%cd -q /content/tcs-tracking-bot
+%run colab_app.py
+```
 
 ## Does it change my sheet?
 
