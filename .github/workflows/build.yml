@@ -20,9 +20,11 @@ jobs:
           - os: macos-latest
             asset: TCS-Tracker-macOS-AppleSilicon.zip
             label: mac-arm
-          - os: macos-13
-            asset: TCS-Tracker-macOS-Intel.zip
-            label: mac-intel
+          # Intel Mac: GitHub's macos-13 runners are being retired and queue for
+          # hours, so that build is done on an Intel Mac and uploaded by hand:
+          #   pyinstaller --onefile --console --name TCS-Tracker --clean tracker.py
+          #   cd dist && zip ../TCS-Tracker-macOS-Intel.zip TCS-Tracker shipments_sample.xlsx
+          #   gh release upload vX.Y.Z TCS-Tracker-macOS-Intel.zip
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
