@@ -26,6 +26,22 @@ First-run warnings (the app is not signed with a paid certificate):
   again. After the first time, double-click works. If it still refuses, open
   Terminal and run `xattr -d com.apple.quarantine ~/Downloads/TCS-Tracker`.
 
+## Run it in Google Colab (no install, works in the browser)
+
+Open this link, then run the cells top to bottom:
+https://colab.research.google.com/github/obaidkhan009/tcs-tracking-bot/blob/main/TCS_Tracker_Colab.ipynb
+
+Cell 2 lets you upload the .xlsx from your computer, or use a file saved in
+Google Drive (updated in place). Cell 5 downloads the updated file when you
+chose upload. The notebook does the same thing as the app; nothing to install.
+
+## Does it change my sheet?
+
+Yes, in place. On the first run it adds the status columns at the end of your
+existing sheet. Every later run overwrites those columns for the rows checked.
+It never creates a new file or a new worksheet, and your original columns are
+untouched. Keep a copy of the file if you want the pre-bot version.
+
 ## For developers: run from source
 
 ### Setup (one time)
