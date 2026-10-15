@@ -26,6 +26,15 @@ First-run warnings (the app is not signed with a paid certificate):
   again. After the first time, double-click works. If it still refuses, open
   Terminal and run `xattr -d com.apple.quarantine ~/Downloads/TCS-Tracker`.
 
+## Search inside Google Sheets (recommended for a sheet in Google Drive)
+
+The bot can live inside the spreadsheet: a **TCS Tracking** menu, a sidebar
+search box, and a *Track* sheet where typing a number in a cell shows the
+status. The row in the sheet is updated at the same time. No install, works
+for anyone who can edit the sheet. Setup takes two minutes: see
+[google_sheets/INSTALL.md](google_sheets/INSTALL.md) and paste
+[google_sheets/Code.gs](google_sheets/Code.gs) into Extensions > Apps Script.
+
 ## Run it in Google Colab (no install, works in the browser)
 
 Open this link and click **Runtime > Run all**:
